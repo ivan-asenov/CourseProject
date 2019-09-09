@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<style type="text/css">
+    .value {
+        font-weight: bold;
+    }
+</style>
+
+<f:view>
+</f:view>
+<h:head>
+    <title>Anketa</title>
+</h:head>
+<body>
+</body>
+<h:form>
+    <p:growl id="messages"/>
+
+    <p:menubar>
+        <p:submenu label="Попълни анкета">
+            <p:menuitem value="Игри" url="../CourseProject_war_exploded/anketa.xhtml" />
+            <p:menuitem value="Друго" url="#" />
+        </p:submenu>
+
+        <p:menuitem value="Резултати" url="../CourseProject_war_exploded/rezultati.xhtml" />
+
+    </p:menubar>
+
+</h:form>
+<h:form>
+    <h:panelGrid columns="2">
+        <p:outputLabel for="console" value="Анкета: " />
+        <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" style="width:125px" >
+            <f:selectItem itemLabel="Избери едно" itemValue="" />
+            <f:selectItem itemLabel="Xbox One" itemValue="XBOX" />
+            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+            <f:selectItem itemLabel="Wii U" itemValue="WiiU" />
+            <f:selectItem itemLabel="PC" itemValue="PC" />
+        </p:selectOneMenu>
+
+        <p:outputLabel for="gen" value="" />
+        <p:selectOneMenu id="gen" value="#{selectOneMenuView.gen}" style="width:125px">
+            <f:selectItem itemLabel="Пол" itemValue="" />
+            <f:selectItem itemLabel="Мъж" itemValue="Muj" />
+            <f:selectItem itemLabel="Жена" itemValue="Jena" />
+        </p:selectOneMenu>
+
+        <h:outputLabel for="basic" value="Години: " />
+        <p:spinner id="basic" value="#{spinnerView.number1}" />
+    </h:panelGrid>
+
+    <h:commandButton value="Изпрати" icon="pi pi-star" style="margin-right:20px;" action="#{mainProject.confirm}">
+    </h:commandButton>
+</h:form>
+
+</html>

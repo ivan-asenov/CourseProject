@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<style type="text/css">
+    .value {
+        font-weight: bold;
+    }
+</style>
+
+<f:view>
+</f:view>
+<h:head>
+    <title>Anketa</title>
+</h:head>
+<h:form>
+    <p:growl id="messages"/>
+
+    <p:menubar>
+        <p:submenu label="Попълни анкета">
+            <p:menuitem value="Игри" url="../CourseProject_war_exploded/anketa.xhtml" />
+            <p:menuitem value="Друго" url="#" />
+        </p:submenu>
+
+        <p:menuitem value="Резултати" url="../CourseProject_war_exploded/rezultati.xhtml" />
+
+    </p:menubar>
+
+</h:form>
+<h:form>
+
+    <body>
+    Ти избра платформа: #{selectOneMenuView.console}
+    <br/>
+    </body>
+
+    <h:commandButton value="Потвърди" icon="pi pi-star" style="margin-right:20px;" action="#{mainProject.answers}">
+        <f:param name="responseConsole" value="#{selectOneMenuView.console}" />
+        <f:param name="responseGender" value="#{selectOneMenuView.gen}" />
+        <f:param name="responseAge" value="#{spinnerView.number1}" />
+    </h:commandButton>
+
+</h:form>
+
+</html>
